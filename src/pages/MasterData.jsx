@@ -8,7 +8,7 @@ import DashTable from "../components/DashTable";
 import QuickCardCollection from "../components/QuickCardCollection";
 import DashInfo from "../components/DashInfo";
 
-function Dashboard() {
+function MasterData() {
   return (
     <>
       <div className="homepage-main-container">
@@ -20,7 +20,8 @@ function Dashboard() {
             <TopNav />
           </div>
           <div className="content">
-            Welcome to our Patient Management System!
+            <DashTable />
+            <QuickCardCollection />
           </div>
         </div>
       </div>
@@ -28,4 +29,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default MasterData;

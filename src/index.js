@@ -6,6 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import Dashboard from "./pages/Dashboard";
 import UpComing from "./pages/UpComing";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MasterData from "./pages/MasterData";
+import NewPatient from "./pages/NewPatient";
+import ExistingPatient from "./pages/ExistingPatient";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,10 +16,11 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="/claims" element={<UpComing />} />
-        <Route path="/billerqueue" element={<UpComing />} />
-        <Route path="/subscription" element={<UpComing />} />
-        <Route path="/health" element={<UpComing />} />
+        <Route path="/newpatient" element={<NewPatient />} />
+        <Route path="/existingpatient" element={<ExistingPatient />} />
+        <Route path="/masterdata" element={<MasterData />} />
+        <Route path="/followup" element={<UpComing />} />
+        <Route path="/consulting" element={<UpComing />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

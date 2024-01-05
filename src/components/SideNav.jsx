@@ -1,7 +1,6 @@
 import React from "react";
 import "../styles.css";
 import logo from "../images/arunlogo.png";
-import rocket from "../images/rocket.png";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import CardMembershipIcon from "@mui/icons-material/CardMembership";
@@ -12,10 +11,10 @@ import { useNavigate } from "react-router-dom";
 function SideNav() {
   const sideNavArray = [
     "DashBoard",
-    "Claims",
-    "Biller Queue",
-    "Subscription",
-    "Health",
+    "New Patient",
+    "Master Data",
+    "Patient Follow up",
+    "Online and Physical Consulting",
   ];
   const navigate = useNavigate();
   const handleSideNavClick = (page) => {
@@ -23,17 +22,20 @@ function SideNav() {
       case "dashboard":
         navigate("/");
         break;
-      case "claims":
-        navigate("/claims");
+      case "newpatient":
+        navigate("/newpatient");
         break;
-      case "subscription":
-        navigate("/subscription");
+      case "existingpatient":
+        navigate("/existingpatient");
         break;
-      case "billerqueue":
-        navigate("/billerqueue");
+      case "masterdata":
+        navigate("/masterdata");
         break;
-      case "health":
-        navigate("/health");
+      case "followup":
+        navigate("/followup");
+        break;
+      case "consulting":
+        navigate("/consulting");
         break;
     }
   };
@@ -54,31 +56,38 @@ function SideNav() {
           </div>
           <div
             className="side-nav-button"
-            onClick={() => handleSideNavClick("claims")}
+            onClick={() => handleSideNavClick("newpatient")}
           >
             <AssignmentIcon />
-            Claims
+            New Patient
           </div>
           <div
             className="side-nav-button"
-            onClick={() => handleSideNavClick("billerqueue")}
+            onClick={() => handleSideNavClick("existingpatient")}
+          >
+            <AssignmentIcon />
+            Existing Patient
+          </div>
+          <div
+            className="side-nav-button"
+            onClick={() => handleSideNavClick("masterdata")}
           >
             <CardMembershipIcon />
-            Biller Queue
+            Master Data
           </div>
           <div
             className="side-nav-button"
-            onClick={() => handleSideNavClick("subscription")}
+            onClick={() => handleSideNavClick("followup")}
           >
             <BookmarksIcon />
-            Subscription
+            Patient Follow up
           </div>
           <div
             className="side-nav-button"
-            onClick={() => handleSideNavClick("health")}
+            onClick={() => handleSideNavClick("consulting")}
           >
             <MonitorHeartIcon />
-            Health
+            Online and Physical Consulting
           </div>
         </div>
         {/* <div className="side-nav-card">
